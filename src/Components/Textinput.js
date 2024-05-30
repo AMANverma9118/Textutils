@@ -37,27 +37,32 @@ export default function Textinput(proops) {
     //  console.log("Upper case clicked" + text)
     let newText = text.toUpperCase();
     setText(newText);
+    proops.ShowAlert("Your text has been converted into Upper case Successfully!","success");
   }
 
   const Handellower = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    proops.ShowAlert("Your text has been converted into Lower case Successfully!","success");
   }
 
   const HandelClear = () => {
     let newText = "";
     setText(newText);
+    proops.ShowAlert("Your text has been cleared Successfully!","success");
   }
 
   const HandelCopy = () => {
     var text = document.getElementById("exampleFormControlTextarea1");
     text.select();
     navigator.clipboard.writeText(text.value);
+    proops.ShowAlert("Your text has been copied to clipboard Successfully!","success");
   }
 
   const Handelspace = () => {
     let newtext = text.split(/[ ]+/);
     setText(newtext.join(" "))
+    proops.ShowAlert("Your text WhiteSpace has been removed Successfully!","success");
   }
 
 

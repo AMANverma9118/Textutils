@@ -9,7 +9,7 @@ export default function Alert(proops) {
     return (
         proops.alert && <div class={`alert alert-${proops.alert.type} alert-dismissible fade show`} role="alert">
             <strong>{captialize(proops.alert.type)}: </strong>{proops.alert.msg}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            
         </div>
     )
 }
