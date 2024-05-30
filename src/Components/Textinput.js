@@ -17,7 +17,6 @@ function check(text) {
         <p>{wordsCount} Words and {text.length} Characters</p>
         <p>You take {0.008 * wordsCount} Minutes to read the words</p>
         <p>Number of Paragraph in your text {numberOfParagraphs}</p>
-
       </>
     )
   }
@@ -37,32 +36,67 @@ export default function Textinput(proops) {
     //  console.log("Upper case clicked" + text)
     let newText = text.toUpperCase();
     setText(newText);
-    proops.ShowAlert("Your text has been converted into Upper case Successfully!","success");
+    if(text.length===0)
+      {
+        proops.ShowAlert("Enter Text!","warning");
+      }
+      else{
+        proops.ShowAlert("Your text has been converted into Upper case Successfully!","success");
+      }
+    
   }
 
   const Handellower = () => {
     let newText = text.toLowerCase();
     setText(newText);
-    proops.ShowAlert("Your text has been converted into Lower case Successfully!","success");
+    if(text.length==0)
+      {
+        proops.ShowAlert("Enter Text!","warning");
+      }
+      else{
+        proops.ShowAlert("Your text has been converted into Lower case Successfully!","success");
+      }
+    
   }
 
   const HandelClear = () => {
     let newText = "";
     setText(newText);
-    proops.ShowAlert("Your text has been cleared Successfully!","success");
+    if(text.length===0)
+      {
+        proops.ShowAlert("Enter Text!","warning");
+      }
+      else{
+        proops.ShowAlert("Your text has been Cleared Successfully!","success");
+      }
+    
   }
 
   const HandelCopy = () => {
-    var text = document.getElementById("exampleFormControlTextarea1");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    proops.ShowAlert("Your text has been copied to clipboard Successfully!","success");
+    var text1 = document.getElementById("exampleFormControlTextarea1");
+    text1.select();
+    navigator.clipboard.writeText(text1.value);
+    if(text.length===0)
+      {
+        proops.ShowAlert("Enter Text!","warning");
+      }
+      else{
+        proops.ShowAlert("Your text has been Copied Successfully!","success");
+      }
+    
   }
 
   const Handelspace = () => {
     let newtext = text.split(/[ ]+/);
     setText(newtext.join(" "))
-    proops.ShowAlert("Your text WhiteSpace has been removed Successfully!","success");
+    if(text.length===0)
+      {
+        proops.ShowAlert("Enter Text!","warning");
+      }
+      else{
+        proops.ShowAlert("Your text has been free from extra white space Successfully!","success");
+      }
+    
   }
 
 
