@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.blank{
+  color: blue;
+  
+}
+
+.btnofupper{
+  margin: 1rem;
+  color: white;
+  border: 2px solid green;
+  border-radius: 5%;
+  background-color: #198754;
+}
+
+.btnofupper :hover{
+  background-color: green;
+}
