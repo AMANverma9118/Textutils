@@ -19,10 +19,6 @@ export default function Navbar(proops) {
             <a className="nav-link" href="#">{proops.aboutText}</a>
           </li>
         </ul>
-        {/* <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-outline-primary mx-1" type="submit">Search</button>
-        </form> */}
         <div className={`form-check form-switch text-${proops.mode === 'light'?'secondary':'light'}`}>
   <input className="form-check-input" type="checkbox" onClick={proops.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
   <label className="form-check-label" for="flexSwitchCheckDefault" >{proops.changesMode}</label>

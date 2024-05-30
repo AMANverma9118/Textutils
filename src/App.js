@@ -5,6 +5,14 @@ import Navbar from './Components/Navbar';
 import Textinput from './Components/Textinput';
 import Proptype from 'prop-types'
 import Alert from './Components/Alert';
+import About from './Components/About';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
 
 
 let name = "Aman";
@@ -32,7 +40,6 @@ function App() {
         document.body.style.backgroundColor = "black"
         setchangesMode('Enable Light Mode')
         ShowAlert("Dark Mode Activated","success")
-        
       }
     else{
       setMode('light')
@@ -51,7 +58,14 @@ function App() {
       <Navbar tytle="Textutils" aboutText="About Us" mode = {mode} toggleMode = {toggleMode}  changesMode = {changesMode}/>
       <Alert alert={alert}/>
       <div className="container my - 3">
+        <Switch>
+          <Route path='/about'>
+          <About />
+          </Route>
+         
+        </Switch>
         <Textinput ShowAlert={ShowAlert} heading="Enter your text to analyze" mode = {mode}/>
+        
       </div>
 
  
