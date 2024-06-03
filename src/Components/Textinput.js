@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Proptype from 'prop-types'
 
-let count = 0;
+
 function check(text) {
 
   //trim() is used to remove the whitespace from the text
@@ -49,7 +48,7 @@ export default function Textinput(proops) {
   const Handellower = () => {
     let newText = text.toLowerCase();
     setText(newText);
-    if(text.length==0)
+    if(text.length===0)
       {
         proops.ShowAlert("Enter Text!","warning");
       }
@@ -83,6 +82,7 @@ export default function Textinput(proops) {
       else{
         proops.ShowAlert("Your text has been Copied Successfully!","success");
       }
+      document.getSelection().removeAllRanges();
     
   }
 

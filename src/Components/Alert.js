@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Proptype from 'prop-types'
+
 
 export default function Alert(proops) {
     const captialize = (word) =>{
@@ -7,9 +7,11 @@ export default function Alert(proops) {
        return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
     return (
-        proops.alert && <div class={`alert alert-${proops.alert.type} alert-dismissible fade show`} role="alert">
+        <div style={{height: "50px"}}>
+        {proops.alert && <div class={`alert alert-${proops.alert.type} alert-dismissible fade show`} role="alert">
             <strong>{captialize(proops.alert.type)}: </strong>{proops.alert.msg}
             
+        </div>}
         </div>
     )
 }
