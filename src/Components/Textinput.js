@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 function check(text) {
 
   //trim() is used to remove the whitespace from the text
-  const wordsArray = text.trim().split(" ").filter(word => word.length > 0);
+  const wordsArray = text.trim().split(/\s+/).filter(word => word.length > 0);
   const wordsCount = wordsArray.length;
 
   const paragraphsArray = text.split(/\n+/).filter(paragraph => paragraph.length > 0);
@@ -72,9 +72,7 @@ export default function Textinput(proops) {
   }
 
   const HandelCopy = () => {
-    var text1 = document.getElementById("exampleFormControlTextarea1");
-    text1.select();
-    navigator.clipboard.writeText(text1.value);
+    navigator.clipboard.writeText(text);
     if(text.length===0)
       {
         proops.ShowAlert("Enter Text!","warning");
@@ -82,7 +80,7 @@ export default function Textinput(proops) {
       else{
         proops.ShowAlert("Your text has been Copied Successfully!","success");
       }
-      document.getSelection().removeAllRanges();
+   
     
   }
 

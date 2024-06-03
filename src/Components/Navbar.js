@@ -17,12 +17,12 @@ export default function Navbar(proops) {
             <Link className="nav-link active mx-2" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link mx-2" to="/about">{proops.aboutText}</Link>
+            <Link className="nav-link active mx-2" to="/about">{proops.aboutText}</Link>
           </li>
         </ul>
         <div className={`form-check form-switch text-${proops.mode === 'light'?'secondary':'light'}`}>
   <input className="form-check-input " type="checkbox" onClick={proops.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
-  <label className="form-check-label" for="flexSwitchCheckDefault" >{proops.changesMode}</label>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault" >{proops.changesMode}</label>
 </div>
       </div>
     </div>
